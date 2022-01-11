@@ -1,5 +1,5 @@
 /* FONTS */
-@font-face {
+/* @font-face {
      font-family: 'Roboto';
      src: url('Roboto-Bold.woff2') format('woff2'),
           url('Roboto-Bold.woff') format('woff');
@@ -15,7 +15,7 @@
      font-weight: 500;
      font-style: normal;
      font-display: swap;
-}
+} */
 
 *,
 *::before,
@@ -36,12 +36,43 @@ body {
      padding: 0px 20px;
 }
 
+.visually-hidden {
+     position: absolute;
+     width: 1px;
+     height: 1px;
+     margin: -1px;
+     padding: 0;
+     overflow: hidden;
+     border: 0;
+     clip: rect(0 0 0 0);
+}
+
+img {
+     max-width: 100%;
+     height: auto;
+     vertical-align: middle;
+}
+
+
+body::-webkit-scrollbar {
+     width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+     background-color: rgb(141, 117, 10);
+     border-radius: 15px;
+}
+
 .wrapper__box {
      position: relative;
      margin: 50px 0px 70px 0px;
 }
 
-.wrapper__box::after {
+.wrapper__btn {
      position: absolute;
      top: 8px;
      right: 5px;
@@ -49,9 +80,17 @@ body {
      width: 41px;
      height: 35px;
      cursor: pointer;
+     border: none;
+     background-color: transparent;
      background-image: url("../img/heart.svg");
      background-repeat: no-repeat;
      background-size: cover;
+}
+
+.wrapper__btn.active {
+     width: 41px;
+     height: 31px;
+     background-image: url("../img/heart-red.svg");
 }
 
 .wrapper__buttons {
@@ -123,6 +162,7 @@ body {
 
 .wrap__list {
      display: flex;
+     justify-content: center;
      flex-wrap: wrap;
      margin: -15px;
      padding: 0;
@@ -133,7 +173,7 @@ body {
      flex-direction: column;
      align-items: center;
      margin: 13px;
-     width: 307px;
+     width: 285px;
      background: #FFFFFF;
      cursor: pointer;
      border: 2px solid #000000;
@@ -217,4 +257,52 @@ body {
      font-weight: bold;
      font-size: 24px;
      line-height: 28px;
+}
+
+.modal-panel {
+     display: none;
+}
+
+.modal__overlay {
+     position: fixed;
+     top: 0px;
+     left: 0px;
+     width: 100vw;
+     height: 100vh;
+     background: rgba(0, 0, 0, 0.7);
+     z-index: 1;
+}
+
+.content {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     width: 1100px;
+     min-height: 500px;
+     padding: 20px;
+     transform: translate(-50%, -50%);
+     border: 2px solid #000;
+     border-radius: 20px;
+     background-color: #fff;
+     z-index: 2;
+}
+
+.close-btn {
+     position: absolute;
+     top: 20px;
+     right: 30px;
+     width: 30px;
+     height: 30px;
+     line-height: 25px;
+     cursor: pointer;
+     border: 2px solid transparent;
+     border-radius: 50px;
+     background-color: rgba(0, 0, 0, 0.664);
+     transition: 0.5s;
+}
+
+.close-btn:hover {
+     color: #000;
+     border: 2px solid #000;
+     background-color: transparent;
 }

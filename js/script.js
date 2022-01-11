@@ -1,17 +1,19 @@
 let elList = document.querySelector(".wrap__list");
+let elBtn = document.querySelector(".wrapper__btn");
+let elBody = document.body;
 
 for (let pokemon of pokemons) {
 
      // CREATE
-     let elItem = document.createElement("li");
-     let elImg = document.createElement("img");
-     let elItemDiv = document.createElement("div");
-     let pokemonName = document.createElement("h3");
-     let pokemonType = document.createElement("p");
-     let pokemonWeigth = document.createElement("span");
-     let pokemonSpawn = document.createElement("span");
-     let pokemonAge = document.createElement("span");
-     let pokemonHeardBtn = document.createElement("button");
+     let elItem = document.createElement("li"),
+          elImg = document.createElement("img"),
+          elItemDiv = document.createElement("div"),
+          pokemonName = document.createElement("h3"),
+          pokemonType = document.createElement("p"),
+          pokemonWeigth = document.createElement("span"),
+          pokemonSpawn = document.createElement("span"),
+          pokemonAge = document.createElement("span"),
+          pokemonHeardBtn = document.createElement("button");
 
      //SET-ATRIBUT
      elItem.setAttribute("class", "wrap__item");
@@ -32,7 +34,6 @@ for (let pokemon of pokemons) {
      pokemonSpawn.textContent = pokemon.avg_spawns;
      pokemonAge.textContent = "age";
 
-
      //APPEND
      elList.appendChild(elItem);
      elItem.appendChild(elImg);
@@ -44,7 +45,35 @@ for (let pokemon of pokemons) {
      pokemonSpawn.appendChild(pokemonAge);
      elItemDiv.appendChild(pokemonHeardBtn);
 
+
+     // CREATE MODAL-PANEL
+     let elModal = document.createElement("div"),
+          elOverlay = document.createElement("div"),
+          elModalContent = document.createElement("div"),
+          elModalClose = document.createElement("div");
+
+     elModal.setAttribute("class", "modal-panel");
+     elOverlay.setAttribute("class", "modal__overlay");
+     elModalContent.setAttribute("class", "content");
+     elModalClose.setAttribute("class", "close-btn");
+
+     elBody.appendChild(elModal);
+     elModal.appendChild(elOverlay);
+     elModal.appendChild(elModalContent);
+     elModalContent.appendChild(elModalClose)
+
+     elBtn.onclick = function () {
+          elModal.style.display = "inline";
+     }
+
+     elModalClose.onclick = function () {
+          elModal.style.display = "none";
+     }
+
      pokemonHeardBtn.onclick = function () {
           pokemonHeardBtn.classList.toggle('active');
+
+
      }
+
 }
