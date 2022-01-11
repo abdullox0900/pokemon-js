@@ -28,8 +28,165 @@ body {
      background-color: #FFD845;
 }
 
-.container {
-     width: 1358px;
+.container-wrapper {
+     width: 1348px;
      margin: 0 auto;
      padding: 0px 20px;
+}
+
+.wrapper__box {
+     position: relative;
+     margin: 50px 0px 70px 0px;
+}
+
+.wrapper__box::after {
+     position: absolute;
+     top: 8px;
+     right: 5px;
+     content: "";
+     width: 41px;
+     height: 35px;
+     cursor: pointer;
+     background-image: url("../img/heart.svg");
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+.wrapper__buttons {
+     margin-bottom: 100px;
+}
+
+.btn {
+     position: relative;
+     padding: 0px;
+     font-size: 24px;
+     font-weight: 700;
+     line-height: 28.13px;
+     border-radius: 15px;
+     background-color: #fff;
+     background-size: cover;
+     background-repeat: no-repeat;
+}
+
+.btn:nth-child(1) {
+     padding: 16px 115px 16px 82px !important;
+}
+
+.btn:nth-child(1)::after {
+     position: absolute;
+     top: 27.5px;
+     right: 88px;
+     content: "";
+     width: 10px;
+     height: 6px;
+     background-image: url("../img/icon.svg");
+}
+
+.btn:nth-child(2) {
+     padding: 16px 195px 16px 29px;
+}
+
+.btn:nth-child(2)::after {
+     position: absolute;
+     top: 21px;
+     right: 33px;
+     content: "";
+     width: 18px;
+     height: 18px;
+     background-image: url("../img/Mask.svg");
+}
+
+.btn:nth-child(3) {
+     padding: 16px 114px 16px 80px;
+}
+
+.btn:nth-child(3)::after {
+     position: absolute;
+     top: 27.5px;
+     right: 87px;
+     content: "";
+     width: 10px;
+     height: 6px;
+     background-image: url("../img/icon.svg");
+}
+
+.btn:nth-child(4) {
+     padding: 16px 64px 16px 64px;
+}
+
+
+.btn+.btn {
+     margin-left: 35px;
+}
+
+.wrap__list {
+     display: flex;
+     flex-wrap: wrap;
+     margin: -30px;
+}
+
+.wrap__item {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin: 13px;
+     width: 307px;
+     background: #FFFFFF;
+     border: 2px solid #000000;
+     box-sizing: border-box;
+     border-radius: 20px;
+}
+
+.wrap__img {
+     margin-top: 30px;
+     margin-bottom: 68px;
+     width: 157px;
+     height: 157px;
+     object-fit: cover;
+}
+
+.wrap__item-box {
+     padding: 20px 30px 37px 30px;
+     align-self: start;
+     width: 100%;
+     border-top: 2px solid #000;
+}
+
+.wrap__header {
+     position: relative;
+     margin: 0;
+     margin-bottom: 5px;
+     font-weight: bold;
+     font-size: 24px;
+     line-height: 28px;
+}
+
+.wrap__header::after {
+     position: absolute;
+     right: 0px;
+     content: "";
+     width: 25px;
+     height: 21px;
+     cursor: pointer;
+     background-image: url("../img/heart.svg");
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+.wrap__type {
+     margin: 0;
+     margin-bottom: 25px;
+     font-weight: 500;
+     font-size: 20px;
+     line-height: 23px;
+}
+
+.wrap__text {
+     font-weight: bold;
+     font-size: 24px;
+     line-height: 28px;
+}
+
+.wrap__text+.wrap__text {
+     margin-left: 30px;
 }
